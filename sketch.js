@@ -186,7 +186,8 @@ var Banana = function (x) {
 	this.unCaught = true;
 	
 	this.show = function () {
-		image (bananaImage, this.x , this.y, this.d, this.d);
+		text ("Expectations", this.x, this.y);
+		//image (bananaImage, this.x , this.y, this.d, this.d);
 	}
 	
 	this.move = function () {
