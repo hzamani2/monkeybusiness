@@ -1,7 +1,7 @@
 var bananas = [];
 var s;
 var basket;
-var score = 99;
+var score = 0;
 var lives = 3;
 var frequency = 60;
 var gameOver = false;
