@@ -18,7 +18,6 @@ var ref;
 var scoreboard = false;
 var scoreboardRetrieved = false;
 var scoreArray = [];
-var submitted = false;
 
 function preload() {
 	jungleMusic = loadSound ('https://hzamani2.github.io/gameMusic/jungle2.mp3');
