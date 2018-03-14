@@ -22,6 +22,7 @@ var backgroundImage;
 var titleScreen = true;
 var introImage;
 var introButton;
+var bananaStore = false;
 
 function preload() {
 	jungleMusic = loadSound ('https://hzamani2.github.io/gameMusic/jungle2.mp3');
@@ -49,8 +50,8 @@ function setup() {
 	button.hide();
 
 	//center button and input
-	input.position (width/2 - input.width/2 - button.width/2, height/2 + 110);
-	button.position(input.x + input.width + 10, height/2 + 110);
+	input.position (width/2 - input.width/2 - button.width/2, height/2 + 60);
+	button.position(input.x + input.width + 10, height/2 + 60);
 
 
 	//image loades
@@ -90,7 +91,9 @@ function setup() {
 
 
 function draw() {
+	if (bananaStore) {
 
+	}
 	if (titleScreen) {
 		background (0);
 		textAlign (CENTER);
@@ -112,8 +115,9 @@ function draw() {
 	if (game) {
 		
 		//black background
-		//image (backgroundImage, 0, 0, 800, 600);
-		background(0);
+		imageMode (CORNER);
+		image (backgroundImage, 0, 0, 800, 600);
+		//background(0);
 
 		//drop bananas
 		if (frameCount % frequency == 0) {
@@ -176,9 +180,9 @@ function draw() {
 		background (0);
 		textSize (25);
 		textAlign (CENTER);
-		text ("GAME OVER", width/2, height/2);
-		text ("Score: " + score, width/2, height/2 + 25);
-		text ("Enter your name to submit your score", width/2, height/2 + 75);
+		text ("GAME OVER", width/2, height/2 - 50);
+		text ("Score: " + score, width/2, height/2 - 25);
+		text ("Enter your name to submit your score", width/2, height/2 + 25);
 	}
 
 	if (scoreboard) {
@@ -209,6 +213,7 @@ var Basket = function () {
 	this.y = height - this.h;
 	
 	this.show = function () {
+		imageMode (CENTER);
 		image (basketImage, mouseX, this.y, this.w, this.h);
 	}
 	
@@ -222,6 +227,7 @@ var Banana = function (x) {
 	this.unCaught = true;
 	
 	this.show = function () {
+		imageMode(CENTER);
 		image (bananaImage, this.x , this.y, this.d, this.d);
 	}
 	
@@ -257,10 +263,10 @@ var Monkey = function (x) {
 		if (random() < .04) {
 			this.monkeySpeed *= -1;
 		}
-		if (this.x > width - 10) {
+		if (this.x > width - 40) {
 			this.monkeySpeed = abs(this.monkeySpeed) * -1;
 		}
-		if (this.x < 10) {
+		if (this.x < 40) {
 			this.monkeySpeed = abs(this.monkeySpeed);
 		}	
 	}
