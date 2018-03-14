@@ -47,7 +47,7 @@ function setup() {
 
 	//center button and input
 	input.position (width/2 - input.width/2 - button.width/2, height/2 + 100);
-	button.position(input.x + input.width + 5, height/2 + 100);
+	button.position(input.x + input.width + 10, height/2 + 100);
 
 
 	//image loades
